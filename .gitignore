@@ -1,0 +1,25 @@
+chromedriver.exe
+chromedriver*
+tfl.properties
+taxi-rank.iml
+# Eclipse
+.classpath
+.project
+.settings/
+ 
+# Intellij
+.idea/
+*.iml
+*.iws
+*.ipr 
+# Mac
+.DS_Store
+ 
+# Maven
+log/
+target/
+
+frontend/page_load_times/*
+bmp.log
+scLog.txt
+scReadyFile
