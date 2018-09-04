@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- JDBC connection pool (use the built-in connection pool) -->
+        <property name="connection.pool_size">50</property>
+
+        <property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+        <!--<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>-->
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Change these values to true to echo all executed SQL to stdout -->
+        <property name="show_sql">false</property>
+        <property name="use_sql_comments">false</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- This is the entity class that we'll be testing. -->
+        <mapping class="com.UCDC.entities.Student"/>
+
+    </session-factory>
+</hibernate-configuration>

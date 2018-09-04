@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/header :: header-css"/>
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"/>
+
+<main>
+    <h2>Estudiantes</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="student : ${list}">
+                <td th:text="${student.getStudentCode()}"></td>
+                <td th:text="${student.getStudentName()}"></td>
+                <td th:text="${student.getStudentSurname()}"></td>
+                <td th:text="${student.getStudentMail()}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</main>
+<!-- /.container -->
+
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>
