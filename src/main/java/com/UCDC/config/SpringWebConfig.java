@@ -49,6 +49,7 @@ public class SpringWebConfig implements WebMvcConfigurer {
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
+        resolver.setAlwaysProcessRedirectAndForward(true);
         resolver.setTemplateEngine(templateEngine());
         registry.viewResolver(resolver);
     }

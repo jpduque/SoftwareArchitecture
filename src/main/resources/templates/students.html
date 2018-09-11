@@ -17,6 +17,7 @@
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Correo</th>
+                <th>Editar</th>
             </tr>
             </thead>
             <tbody>
@@ -25,6 +26,10 @@
                 <td th:text="${student.getStudentName()}"></td>
                 <td th:text="${student.getStudentSurname()}"></td>
                 <td th:text="${student.getStudentMail()}"></td>
+                <td>
+                    <img src="https://sonaesierracms-v2.cdnpservers.net/wp-content/uploads/sites/20/2015/01/Safety_Tips.png"
+                         style="width:15px;height:15px;"
+                         th:onclick="'redirect('+${student.getId()}+');'"/> </td>
             </tr>
             </tbody>
         </table>
@@ -34,6 +39,13 @@
 <!-- /.container -->
 
 <div th:replace="fragments/footer :: footer"/>
+
+<script th:inline="javascript">
+    function redirect(parameter) {
+        return window.location.replace("/updateStudent?studentId=" + parameter + "");
+    }
+
+</script>
 
 </body>
 </html>

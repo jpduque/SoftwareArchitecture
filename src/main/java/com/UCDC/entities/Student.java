@@ -5,8 +5,9 @@ import javax.persistence.*;
 @Entity
 public class Student {
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int Id;
-    private int StudentCode;
+    private String StudentCode;
     private String StudentName;
     private String StudentSurname;
     private String StudentMail;
@@ -19,11 +20,11 @@ public class Student {
         Id = id;
     }
 
-    public int getStudentCode() {
+    public String getStudentCode() {
         return StudentCode;
     }
 
-    public void setStudentCode(int studentCode) {
+    public void setStudentCode(String studentCode) {
         StudentCode = studentCode;
     }
 

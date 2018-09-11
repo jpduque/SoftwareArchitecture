@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title>Centauros Bank</title>
+
+    <div th:replace="fragments/header :: header-css"/>
+
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"/>
+
+<main userRoles="main">
+
+    <div class="container">
+        <h1 class="well">Creacion de Estudiante</h1>
+        <div class="col-lg-12 well">
+            <div class="row">
+                <form id="form" th:action="@{/studentCreation}" th:object="${student}" method="post">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <label>Codigo estudiante</label>
+                                <input type="text" placeholder=""
+                                       class="form-control" th:field="*{StudentCode}" required="true"/>
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Nombres estudiante</label>
+                                <input type="text" placeholder=""
+                                       class="form-control" th:field="*{StudentName}" required="true"/>
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Apellidos estudiante</label>
+                                <input type="text" placeholder=""
+                                       class="form-control" th:field="*{StudentSurname}" required="true"/>
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Correo estudiante</label>
+                                <input type="text" placeholder=""
+                                       class="form-control" th:field="*{StudentMail}" required="true"/>
+                            </div>
+                            <button type="submit" class="btn btn-lg btn-info">Crear Estudiante</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<!-- /.container -->
+
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>
